@@ -7,7 +7,7 @@ const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(theme: string, fontSize: string) {
   let background = "white";
-  let background_img_url = "https://site-groupie.vercel.app/ogp/opg.png";
+  let background_img_url = "https://site-groupie.vercel.app/ogp/ogp.png";
 
   if (theme === "dark") {
     background = "black";
@@ -104,7 +104,8 @@ function getCss(theme: string, fontSize: string) {
 export function getHtml(parsedReq: ParsedRequest) {
   const { text, theme, md, fontSize } = parsedReq;
   return `<!DOCTYPE html>
-<html>
+<html lang="ja
+">
     <meta charset="utf-8">
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
