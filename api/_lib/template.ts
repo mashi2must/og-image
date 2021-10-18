@@ -57,9 +57,6 @@ function getCss(theme: string, fontSize: string) {
         background-position:top;
         height: 630px;
         width: 1200px
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     code {
@@ -90,14 +87,21 @@ function getCss(theme: string, fontSize: string) {
         margin: 0 .05em 0 .1em;
         vertical-align: -0.1em;
     }
-    
+    .wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height:580px;
+    }
     .heading {
         font-family: 'Kosugi Maru', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         line-height: 1.8;
-        width:630px;
-        padding:220px 40px;
+        width:800px;
         margin:0 auto;
+        text-align: center;
+        word-break: keep-all;        
     }`;
 }
 
@@ -109,14 +113,19 @@ export function getHtml(parsedReq: ParsedRequest) {
     <meta charset="utf-8">
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body>       
+    <body>     
+    <div class="wrap">  
             <div class="heading">${emojify(
               md ? marked(text) : sanitizeHtml(text)
             )}
             </div>
+    </div>
     </body>
 </html>`;
 }
