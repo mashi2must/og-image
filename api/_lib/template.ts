@@ -97,7 +97,7 @@ function getCss(theme: string, fontSize: string) {
     .heading {
         font-family: 'Kosugi Maru', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
-        color:'3333333';
+        color:'rgba(51,51,51,.7411764705882353)';
         line-height: 1.8;
         width:800px;
         margin:0 auto;
